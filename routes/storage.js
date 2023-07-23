@@ -38,10 +38,10 @@ storageRoutes.get(storageUrl, (req, res) => {
     // search filter implementation based on query
     if (quer) {
         // filter query
-        const query = quer.toLowerCase().replace(/\s/g, '');
+        const query = quer.toLowerCase().replaceAll(" ", "");
         // get the data-object related to the specified type
         existingCollectionTypeData = existingCollectionTypeData.filter((element) =>
-            element.name.replace(/\s/g, '').toLowerCase().includes(query)
+            element.name.replaceAll(" ", "").toLowerCase().includes(query)
         );
     }
 
